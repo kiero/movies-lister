@@ -1,4 +1,8 @@
 MoviesLister::Application.routes.draw do
+  get "sessions/new"
+
+  get "sessions/destroy"
+
   get "movies/index"
 
   get "pages/dashboard"
