@@ -2,5 +2,7 @@
   .span4.offset4
     %h2{:style => "margin-top: 20px;"} Add a movie
     = form_for [:admin, @movie] do |f|
-      = f.text_field :title
-      = f.submit 'Next', :class => 'btn btn-primary'
+      %fieldset
+        = render "#{@movie.current_step}", :f => f
+        = f.submit 'Back', :name => 'back_button', :class => 'btn btn-primary' unless @movie.first_step?
+        = f.submit 'Next', :class => 'btn btn-primary'
