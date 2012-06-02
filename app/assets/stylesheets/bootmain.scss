@@ -1,0 +1,109 @@
+@import url("http://fonts.googleapis.com/css?family=Aladin");
+
+a, abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+  vertical-align: baseline; 
+}
+
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; 
+}
+
+a, ins, del {
+  text-decoration: none; 
+}
+
+ul, ol {
+  list-style: none; 
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse; 
+}
+
+caption, th {
+  text-align: left; 
+}
+
+q {
+  &:after, 
+  &:before {
+    content: ""; 
+  } 
+}
+
+/*  General & Links
+----------------------------------------------------------------------- */
+
+body {
+  background: #fff;
+  font: normal 100.01% Arial, Helvetica, Tahoma, Verdana, sans-serif; /* 16px */
+  color: #000;
+}
+
+/* =Top 
+======================================================================= */
+
+.container {
+  margin-top: 10px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+#top {
+  overflow: hidden;
+  margin: 20px 20px 0;
+  header {
+    float: left; 
+  }
+  ul, form {
+    float: right; 
+  }
+  h1 {
+    font-size: 50px; 
+    small {
+      display: block;
+      font-size: 12px;
+      color: #b0abad;
+      margin-top: -10px; 
+    }
+  }
+}
+
+#nav {
+  margin: 2px 15px 0 0;
+  li {
+    display: inline;
+    font-size: 14px;
+    margin-left: 10px; 
+  }
+  a {
+    color: #990033;
+    border-bottom: 1px solid #d47091;
+    &:hover {
+      border-color: #b6345f; 
+    } 
+  } 
+}
+
+.footnote {
+  text-align: center;
+  font-size: 12px;
+  color: #b7b7b1; 
+}

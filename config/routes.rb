@@ -5,7 +5,10 @@ MoviesLister::Application.routes.draw do
 
   get "movies/index"
 
-  get "pages/dashboard"
+  namespace :admin do
+    root :to => "pages#dashboard"
+    match "/add_movie" => "pages#add_movie"
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

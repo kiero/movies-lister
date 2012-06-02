@@ -1,2 +1,23 @@
-%h1 Admin::Pages#dashboard
-%p Find me in app/views/admin/pages/dashboard.html.haml
+.row
+  .span6
+    %h2.left Movies to see
+    .right.btn-group
+      .btn Date
+      .btn Title
+    %ul.clear.well.nav.nav-list{:style => "height: 500px; overflow-y: scroll;"}
+    - @movies.each do |movie|
+      %li
+        %label.checkbox
+          %input{:type => "checkbox"}
+          %a{:href => "#"}= movie.title 
+  .span6
+    %a.btn.btn-large.btn-primary{:href => "#", :style => "width: 93%;"} Add movie to the list
+    %p{:style => "text-align: center; margin: 10px 0;"} — or —
+    %a.btn.btn-large.btn-success{:href => "#", :style => "width: 93%;"} Add movie to the watchlist
+    %h2{:style => "margin-top: 20px;"} Settings
+    %form.well{:action => ""}
+      %label{:for => "username"} Username
+      %input{:name => "username", :placeholder => "Username", :type => "text"}/
+      %label{:for => "password"} Password
+      %input{:name => "password", :placeholder => "Password", :type => "text"}/
+      %input.btn{:style => "display: block;", :type => "submit", :value => "Save"}/
