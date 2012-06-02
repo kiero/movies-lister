@@ -1,4 +1,5 @@
 MoviesLister::Application.routes.draw do
+
   get "sessions/new"
 
   get "sessions/destroy"
@@ -6,8 +7,9 @@ MoviesLister::Application.routes.draw do
   get "movies/index"
 
   namespace :admin do
-    root :to => "pages#dashboard"
-    match "/add_movie" => "pages#add_movie"
+    root :to => "movies#index"
+    match "/new" => "movies#new"
+    resources :movies
   end
 
   # The priority is based upon order of creation:

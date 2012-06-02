@@ -11,9 +11,9 @@
           %input{:type => "checkbox"}
           %a{:href => "#"}= movie.title 
   .span6
-    %a.btn.btn-large.btn-primary{:href => "#", :style => "width: 93%;"} Add movie to the list
+    = link_to 'Add movie to the list', admin_new_path, :class => 'btn btn-large btn-primary', :style => 'width: 93%'
     %p{:style => "text-align: center; margin: 10px 0;"} — or —
-    %a.btn.btn-large.btn-success{:href => "#", :style => "width: 93%;"} Add movie to the watchlist
+    = link_to 'Add movie to the watchlist', admin_new_path, :class => 'btn btn-large btn-success', :style => 'width: 93%'
     %h2{:style => "margin-top: 20px;"} Settings
     %form.well{:action => ""}
       %label{:for => "username"} Username
