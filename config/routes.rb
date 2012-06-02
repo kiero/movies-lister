@@ -1,4 +1,6 @@
 MoviesLister::Application.routes.draw do
+  get "movies/index"
+
   get "pages/dashboard"
 
   # The priority is based upon order of creation:
