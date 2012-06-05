@@ -4,11 +4,12 @@ MoviesLister::Application.routes.draw do
 
   get "sessions/destroy"
 
-  get "movies/index"
+  match "/movies" => "movies#index"
 
   namespace :admin do
     root :to => "movies#index"
-    match "/new" => "movies#new"
+    match "/new_movie" => "movies#new"
+    match "/watchlist/new_movie" => "movies#new"
     resources :movies
   end
 
