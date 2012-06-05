@@ -1,8 +1,4 @@
 %legend Select appropriate movie:
-%select#movie-id{:name => "movie", :size => "6"}
-  %option Sherlock Holmes: The Game of Shadows
-  %option Sherlock Holmes: The Game of Shadows
-  %option Sherlock Holmes: The Game of Shadows
-  %option Sherlock Holmes: The Game of Shadows
-  %option Sherlock Holmes: The Game of Shadows
-  %option --Not on the list--
+%select#movie-id{:name => "movie[tmdb_id]", :size => "11"}
+  - @results.each do |result|
+    %option{:value => "#{result.id}"}= possible_title(result)

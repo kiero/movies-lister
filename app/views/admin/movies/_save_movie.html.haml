@@ -1,5 +1,6 @@
-%h2 Movie title
+%h2= @movie.tmdb_id
 %h3 2012
-%label{:for => "rate"} Rate:
-%input{:max => "10", :min => "0", :name => "rate", :placeholder => "Rate", :type => "number", :value => "0"}
-\/ 10
+- if !to_watchlist
+  %label{:for => "rate"} Rate:
+  %input{:max => "10", :min => "0", :name => "movie[rate]", :placeholder => "Rate", :type => "number", :value => "0"}
+  \/ 10

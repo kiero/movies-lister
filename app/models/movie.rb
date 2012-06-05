@@ -1,9 +1,11 @@
 class Movie < ActiveRecord::Base
-  attr_accessible :cast, :director, :duration, :genre, :rate, :release, :title
+  attr_accessible :cast, :director, :duration, :genre, :rate, :release, :title, :to_see, :tmdb_id
   attr_writer :current_step
+  attr_accessor :tmdb_id
 
-  validates_presence_of :title, :release, :genre, :rate
-  validates :rate, :inclusion => { :in => 0..10 }
+  validates_presence_of :title, :genre
+  validates :rate, :presence => true, :unless => :to_see
+  validates :rate, :inclusion => { :in => 0..10 }, :unless => :to_see
 
   def current_step
     @current_step || steps.first
@@ -23,6 +25,10 @@ class Movie < ActiveRecord::Base
 
   def first_step?
     current_step == steps.first
+  end
+
+  def second_step?
+    current_step == "possible_movies"
   end
 
   def last_step?

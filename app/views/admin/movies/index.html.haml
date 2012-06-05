@@ -5,15 +5,17 @@
       .btn Date
       .btn Title
     %ul.clear.well.nav.nav-list{:style => "height: 500px; overflow-y: scroll;"}
-    - @movies.each do |movie|
-      %li
-        %label.checkbox
-          %input{:type => "checkbox"}
-          %a{:href => "#"}= movie.title 
+      - @years.each do |k,v|
+        %li.nav-header= k
+        - v.each do |movie|
+          %li
+            %label.checkbox
+              %input{:type => "checkbox"}
+              %a{:href => "#"}= movie.title
   .span6
-    = link_to 'Add movie to the list', admin_new_path, :class => 'btn btn-large btn-primary', :style => 'width: 93%'
+    = link_to 'Add movie to the list', admin_new_movie_path, :class => 'btn btn-large btn-primary', :style => 'width: 93%'
     %p{:style => "text-align: center; margin: 10px 0;"} — or —
-    = link_to 'Add movie to the watchlist', admin_new_path, :class => 'btn btn-large btn-success', :style => 'width: 93%'
+    = link_to 'Add movie to the watchlist', admin_new_movie_path(:watchlist => true), :class => 'btn btn-large btn-success', :style => 'width: 93%'
     %h2{:style => "margin-top: 20px;"} Settings
     %form.well{:action => ""}
       %label{:for => "username"} Username
