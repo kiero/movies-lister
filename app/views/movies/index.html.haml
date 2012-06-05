@@ -1,2 +1,20 @@
-%h1 Movies#index
-%p Find me in app/views/movies/index.html.haml
+%table.table-striped.table{:cellspacing => "0", :style => "width: 97%; margin: auto;"}
+  %thead
+    %tr
+      %th Title
+      %th{:width => "500"} Cast
+      %th Director
+      %th Genre
+      %th Year
+      %th Duration
+      %th Rate
+  %tbody
+  - @movies.each do |movie|
+    %tr
+      %td= movie.title
+      %td= movie.cast
+      %td= movie.director
+      %td= movie.genre
+      %td= movie.release.year
+      %td= movie.duration
+      %td= movie.rate

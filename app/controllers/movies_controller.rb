@@ -1,6 +1,6 @@
 
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    @movies = Movie.where("to_see = ?", 'f')
   end
 end
