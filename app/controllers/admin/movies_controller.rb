@@ -4,12 +4,8 @@ class Admin::MoviesController < ApplicationController
   layout 'admin'
 
   def index
-    years = Movie.select("strftime('%Y', release)").where("to_see = ?", 't').group("strftime('%Y', release)").count
-    grouped = {}
-    years.each do |k,v|
-      grouped[k] = Movie.where("strftime('%Y', release) = ?", k)
-    end
-    @years = grouped
+    @movies = Movie.where("to_see = ?", true)
+    @movie_years = @movies.group_by { |m| m.release.year }
   end
 
   def new

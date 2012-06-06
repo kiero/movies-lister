@@ -5,9 +5,9 @@
       .btn Date
       .btn Title
     %ul.clear.well.nav.nav-list{:style => "height: 500px; overflow-y: scroll;"}
-      - @years.each do |k,v|
-        %li.nav-header= k
-        - v.each do |movie|
+      - @movie_years.sort.each do |year, movies|
+        %li.nav-header= year
+        - movies.each do |movie|
           %li
             %label.checkbox
               %input{:type => "checkbox"}

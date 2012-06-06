@@ -9,7 +9,7 @@ describe Admin::MoviesController do
     end
 
     it "populates an array with movies" do
-      movie = FactoryGirl.create(:movie)
+      movie = FactoryGirl.create(:movie_to_see)
       get :index
       assigns(:movies).should eq([movie])
     end
