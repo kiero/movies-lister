@@ -1,16 +1,16 @@
 MoviesLister::Application.routes.draw do
 
-  get "sessions/new"
-
-  get "sessions/destroy"
+  resources :sessions, :only => [:destroy, :create, :new]
 
   match "/movies" => "movies#index"
+  match "/login" => "sessions#new"
+  match "/logout" => "sessions#destroy"
 
   namespace :admin do
     root :to => "movies#index"
     match "/new_movie" => "movies#new"
     match "/watchlist/new_movie" => "movies#new"
-    resources :movies
+    resources :movies, :only => [:index, :create, :new]
   end
 
   # The priority is based upon order of creation:

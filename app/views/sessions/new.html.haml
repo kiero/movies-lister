@@ -1,2 +1,6 @@
-%h1 Sessions#new
-%p Find me in app/views/sessions/new.html.haml
+.span6.offset4
+  %h2{:style => "margin-top: 20px;"} Login
+  = form_tag({:controller => :sessions, :action => :create}, :method => :post, :class => 'well') do
+    = text_field_tag :username, nil, :placeholder => 'Username'
+    = password_field_tag :password, nil, :placeholder => 'Password'
+    = submit_tag 'Log in', :class => 'btn', :style => 'display: block;'

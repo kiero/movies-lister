@@ -1,6 +1,7 @@
 
 class Admin::MoviesController < ApplicationController
   #before_filter :set_tmdb_api, :only => :create
+  before_filter :authorization
   layout 'admin'
 
   def index
@@ -48,6 +49,13 @@ class Admin::MoviesController < ApplicationController
   end
 
   private
+    def authorization
+      unless session[:user]
+        flash[:error] = "This action involves logging in."
+        redirect_to login_path
+      end
+    end
+
     def set_tmdb_api
       Tmdb.api_key = "cc4b67c52acb514bdf4931f7cedfd12b"
       Tmdb.default_language = "en"
