@@ -15,4 +15,8 @@ FactoryGirl.define do
   factory :movie_to_see, parent: :movie do
     to_see true
   end
+
+  factory :invalid_movie, parent: :movie do
+    title nil
+  end
 end
