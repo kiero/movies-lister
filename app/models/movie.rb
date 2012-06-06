@@ -3,7 +3,7 @@ class Movie < ActiveRecord::Base
   attr_writer :current_step
   attr_accessor :tmdb_id
 
-  validates_presence_of :title, :genre
+  validates_presence_of :title, :genre, :release
   validates :rate, :presence => true, :unless => :to_see
   validates :rate, :inclusion => { :in => 0..10 }, :unless => :to_see
 

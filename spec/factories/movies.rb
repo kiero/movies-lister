@@ -9,5 +9,10 @@ FactoryGirl.define do
     duration 115
     genre "Crime, Drama, Mystery"
     rate 5
+    to_see false
+  end
+
+  factory :movie_to_see, parent: :movie do
+    to_see true
   end
 end

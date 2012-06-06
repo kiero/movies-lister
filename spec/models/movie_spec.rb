@@ -9,7 +9,7 @@ describe Movie do
     FactoryGirl.build(:movie, :title => nil).should_not be_valid
   end
 
-  it "is invalid without release" do
+  it "is invalid without release when" do
     FactoryGirl.build(:movie, :release => nil).should_not be_valid
   end
 
