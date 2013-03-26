@@ -2,6 +2,8 @@ MoviesLister::Application.routes.draw do
 
   resources :sessions, :only => [:destroy, :create, :new]
 
+  post 'sessions/update'
+
   match "/movies" => "movies#index"
   match "/login" => "sessions#new"
   match "/logout" => "sessions#destroy"

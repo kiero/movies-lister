@@ -17,9 +17,11 @@
     %p{:style => "text-align: center; margin: 10px 0;"} — or —
     = link_to 'Add movie to the watchlist', admin_new_movie_path(:watchlist => true), :class => 'btn btn-large btn-success', :style => 'width: 93%'
     %h2{:style => "margin-top: 20px;"} Settings
-    %form.well{:action => ""}
-      %label{:for => "username"} Username
-      %input{:name => "username", :placeholder => "Username", :type => "text"}/
-      %label{:for => "password"} Password
-      %input{:name => "password", :placeholder => "Password", :type => "text"}/
-      %input.btn{:style => "display: block;", :type => "submit", :value => "Save"}/
+    = form_tag(sessions_update_path, :method => :post, :class => 'well') do
+      = label_tag :username, 'Username'
+      = text_field_tag :username, nil, :placeholder => 'Username'
+      = label_tag :password, 'New password'
+      = password_field_tag :password, nil, :placeholder => 'New password'
+      = label_tag :password_confirmation, 'Confirm new password'
+      = password_field_tag :password_confirmation, nil, :placeholder => 'Confirm new password'
+      = submit_tag 'Save', :class => 'btn', :style => 'display: block;'
